@@ -63,6 +63,15 @@ by recency and spend, and the biggest growth lever is earning a second and third
 | At Risk, Cannot Lose Them | Win back | Tested win-back offers; personal outreach for the highest spenders |
 | Hibernating, Lost | Contain cost | Low-cost automated campaigns only |
 
+## Deliverables
+
+| File | Description |
+|---|---|
+| [`notebooks/rfm_customer_segmentation.ipynb`](notebooks/rfm_customer_segmentation.ipynb) | Complete analysis with outputs |
+| [`reports/RFM_Segmentation_Results.xlsx`](reports/RFM_Segmentation_Results.xlsx) | Excel workbook: summary sheet with key findings, plus segment summary and R, F, M scores with segment for every customer |
+| [`reports/tables/customer_rfm_scores.csv`](reports/tables/customer_rfm_scores.csv) | Customer-level list, ready to load into a CRM or account plan |
+| [`reports/figures/`](reports/figures), [`reports/tables/`](reports/tables) | Charts (PNG) and result tables (CSV) |
+
 ## Repository Structure
 
 ```text
@@ -70,9 +79,10 @@ rfm-customer-segmentation/
 ├── data/                    EcomSales.csv and data dictionary
 ├── notebooks/               rfm_customer_segmentation.ipynb (analysis with outputs)
 ├── reports/
+│   ├── RFM_Segmentation_Results.xlsx  (Excel results workbook)
 │   ├── figures/             score distributions, treemaps, revenue per customer
-│   └── tables/              segment summary (CSV)
-├── scripts/run_notebook.py  re-executes the notebook
+│   └── tables/              segment summary and customer scores (CSV)
+├── scripts/                 run_notebook.py, build_excel_report.py
 └── requirements.txt
 ```
 
@@ -80,7 +90,8 @@ rfm-customer-segmentation/
 
 ```bash
 pip install -r requirements.txt
-python scripts/run_notebook.py
+python scripts/run_notebook.py        # re-run the analysis, refresh figures and tables
+python scripts/build_excel_report.py  # rebuild the Excel workbook
 ```
 
 ## Data
